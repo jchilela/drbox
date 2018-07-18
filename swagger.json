@@ -1,0 +1,667 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Use a API SOAP do drBox para criar, buscar, actualizar e eliminar registos do drBox. Use-a em qualquer linguagem que suporte Web Services. A API prevê URLs orientadas a recursos, e usa códigos de respostas HTTP para indicar erros.",
+        "version": "1.0.0",
+        "title": "SOAP API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "apiteam@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "petstore.swagger.io",
+    "basePath": "/v2",
+    "tags": [
+        {
+            "name": "/isgood.svc",
+            "description": "Produtos, Categorias"
+        },
+        {
+            "name": "/lares.svc",
+            "description": "Tudo sobre os lares"
+        },
+        {
+            "name": "/PHService.svc",
+            "description": "Outros serviços",
+            "externalDocs": {
+                "description": "Find out more about our store",
+                "url": "http://swagger.io"
+            }
+        }
+    ],
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "paths": {
+        "/gravaAditivo": {
+            "post": {
+                "tags": [
+                    "/isgood.svc"
+                ],
+                "summary": "Adiciona um novo aditivo no drBox",
+                "description": "Envie os seguintes parámetros na função: (idempresa: integer, descricao: string, notas: string)",
+                "operationId": "gravaAditivo",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                   
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "petstore_auth": [
+                            "write:pets",
+                            "read:pets"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/gravaCategoria": {
+            "post": {
+                "tags": [
+                    "/isgood.svc"
+                ],
+                "summary": "Adiciona uma nova Categoria no drBox",
+                "description": "Envie os seguintes parámetros na função: (idempresa: integer, descricao: string, notas: string)",
+                "operationId": "gravaCategoria",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "petstore_auth": [
+                            "write:pets",
+                            "read:pets"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/gravaProduto": {
+            "post": {
+                "tags": [
+                    "/isgood.svc"
+                ],
+                "summary": "Adiciona um novo Produto no drBox",
+                "description": "Envie os seguintes parámetros na função: (idempresa: Integer, nome: String, idcategoria: Integer, preco: Double, tamanho: Double, obs: String, tempoPreparacao: Double, materiaPrima: Boolean)",
+                "operationId": "gravaProduto",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "petstore_auth": [
+                            "write:pets",
+                            "read:pets"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/leProdutos": {
+            "get": {
+                "tags": [
+                    "/isgood.svc"
+                ],
+                "summary": "Devolve produtos de uma instituição",
+                "description": "Envie os seguintes parámetros na função: (idEmpresa As Long, ByRef auxid As String(), ByRef auxnome As String(), ByRef auxcat As String())",
+                "operationId": "leProdutos",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "petstore_auth": [
+                            "write:pets",
+                            "read:pets"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/leaditivo": {
+            "get": {
+                "tags": [
+                    "/isgood.svc"
+                ],
+                "summary": "Devolve aditivos de um produto de uma instituição",
+                "description": "Envie os seguintes parámetros na função: (idempresa As Integer, idproduto As Integer)",
+                "operationId": "leaditivo",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "petstore_auth": [
+                            "write:pets",
+                            "read:pets"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/lecategorias": {
+            "get": {
+                "tags": [
+                    "/isgood.svc"
+                ],
+                "summary": "Devolve as categorias de uma instituição",
+                "description": "Envie os seguintes parámetros na função: (idempresa As Integer)",
+                "operationId": "lecategorias",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "petstore_auth": [
+                            "write:pets",
+                            "read:pets"
+                        ]
+                    }
+                ]
+            }
+        }, 
+        "/lecliente": {
+            "get": {
+                "tags": [
+                    "/isgood.svc"
+                ],
+                "summary": "Devolve todos os clientes de uma instituição",
+                "description": "Envie os seguintes parámetros na função: (idempresa As Integer)",
+                "operationId": "lecliente",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "petstore_auth": [
+                            "write:pets",
+                            "read:pets"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/GetPass":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Devolve a password do user",
+                "description": "Envie os senguintes parámetros para a função (iduser As Long)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/checkUtente":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Verifica um utente pelo NIF",
+                "description": "Envie os senguintes parámetros para a função (NIF As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/GetAcessoByIDPhone":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Dá acesso pelo id do telefone",
+                "description": "Envie os senguintes parámetros para a função (idphone As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/SetAcessoByIDPhone":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Define acesso pelo id do telefone ",
+                "description": "Envie os senguintes parámetros para a função (iduser As String, idmobile As String, tipo As Integer)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/GetToDo":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Devolve a lista de tarefas de um utilizador",
+                "description": "Envie os senguintes parámetros para a função (iduser As Long)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/GetMedicamento":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Devolve os medicamentos de um utente",
+                "description": "Envie os senguintes parámetros para a função (iduser As Long)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/SetAcessoByNIF":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Define o acesso pelo NIF",
+                "description": "Envie os senguintes parámetros para a função (nif As String, email As String,  tipoU As Long,  pass As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/getAcessoByemail":{
+            "post": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Permite o acesso ao drBox pelo email e password",
+                "description": "Envie os senguintes parámetros para a função (email As String, pass As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/guardaPassEmail":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Guarda a password do user",
+                "description": "Envie os senguintes parámetros para a função (nif As String, pass As String, email As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/leParametrosUser":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Devolve os parametros biologicos do utente",
+                "description": "Envie os senguintes parámetros para a função (iduser As Long)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/leValorParametroUser":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Devolve os valores do parametro do user",
+                "description": "Envie os senguintes parámetros para a função (idUser As Long, idparametro As Long)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/leidParametros":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Devolve o id do parametro",
+                "description": "Envie os senguintes parámetros para a função (ByVal Nomepar As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/lemedicosporNome":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Devolve as informações de um medico",
+                "description": "Envie os senguintes parámetros para a função (Nomepar As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/checkEmail":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Pesquisa o ID do user pelo seu email",
+                "description": "Envie os senguintes parámetros para a função (ByVal email As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/checkNif":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Verifica se o nif esta registado",
+                "description": "Envie os senguintes parámetros para a função (nif As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/msnMobilHelpRegisto":{
+            "get": {
+                "tags": [
+                    "/PHService.svc"
+                ],
+                "summary": "Envia um email de ajuda",
+                "description": "Envie os senguintes parámetros para a função (iduser As Long)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/Utentes":{
+            "get": {
+                "tags": [
+                    "/lares.svc"
+                ],
+                "summary": "Devolve um dataset com utentes de instituição",
+                "description": "Envie os senguintes parámetros para a função (idInstituicao As Integer)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+
+        "/Medicamentos":{
+            "get": {
+                "tags": [
+                    "/lares.svc"
+                ],
+                "summary": "Devolve todos os medicamentos atribuidos a um utente",
+                "description": "Envie os senguintes parámetros para a função (idUtente As Integer)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+
+        "/Produtos":{
+            "get": {
+                "tags": [
+                    "/lares.svc"
+                ],
+                "summary": "Devolve um dataset com todos os produtos de um utente",
+                "description": "Envie os senguintes parámetros para a função (idUtente As Integer)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/historicoConsumoMedicamentos":{
+            "get": {
+                "tags": [
+                    "/lares.svc"
+                ],
+                "summary": "Devolve um dataset com o historico de tomas de medicamentos de um utente",
+                "description": "Envie os senguintes parámetros para a função ( idUtente As Integer, dataInicio As String, dataFim As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/historicoConsumoMateriais":{
+            "get": {
+                "tags": [
+                    "/lares.svc"
+                ],
+                "summary": "Devolve um dataset com o historico de consumo de materias de um utente",
+                "description": "Envie os senguintes parámetros para a função ( idUtente As Integer, dataInicio As String, dataFim As String)",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/regConsumoMedicamento":{
+            "post": {
+                "tags": [
+                    "/lares.svc"
+                ],
+                "summary": "Regista o consumo de medicamentos para um utente",
+                "description": "Envie os senguintes parámetros para a função (idUtente As Integer, idMedicamento As Integer, quantidade As Double, origem As String,  obs As String, horarioConsumo As String). A origem indica se o medicamento que esta a ser consumido vem do stock da instituição ou particular",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+        "/gravarHistoricoStock":{
+            "post": {
+                "tags": [
+                    "/lares.svc"
+                ],
+                "summary": "Regista o consumo de materiais de um utente",
+                "description": "Envie os senguintes parámetros para a função (idUtente As Integer, idMaterial As Integer, quantidade As Double, origem As String,  obs As String, horarioConsumo As String). A origem indica se o material que esta a ser consumido vem do stock da instituição ou particular",
+                "operationId": "findPetsByStatus",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ]
+                
+            }
+        },
+    "definitions": {
+        "gravaAditivo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "petId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "quantity": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "shipDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Order Status",
+                    "enum": [
+                        "placed",
+                        "approved",
+                        "delivered"
+                    ]
+                },
+                "complete": {
+                    "type": "boolean",
+                    "default": false
+                }
+            },
+            "xml": {
+                "name": "Order"
+            }
+        }
+    },
+        "ApiResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "",
+        "url": ""
+    }
+}
